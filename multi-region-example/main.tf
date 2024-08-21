@@ -19,3 +19,7 @@ resource "aws_instance" "test-instance-east-2" {
   }
   count = var.icount
 }
+
+output "multi-region-outputs" {
+  value = [aws_instance.test-instance-east-1[*].public_ip, aws_instance.test-instance-east-2[*].public_ip]
+}
