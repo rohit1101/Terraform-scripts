@@ -4,11 +4,13 @@ This repo contains common terraform scripts for infrastructure deployment.
 
 - [Pre-requisites](https://github.com/rohit1101/Terraform-scripts#pre-requisites)
 - [Multi region example](https://github.com/rohit1101/Terraform-scripts#multi-region-example)
+- [Create a Security Group and attach it to an EC2 instance](https://github.com/rohit1101/Terraform-scripts#create-a-security-group-and-attach-it-to-an-EC2-instance)
 
 ---
 
 [Pre-requisites]: #pre-requisites
 [Multi region example]: #multi-region-example
+[Create a Security Group and attach it to an EC2 instance]: #create-a-security-group-and-attach-it-to-an-EC2-instance
 
 ### Pre-requisites
 
@@ -32,4 +34,6 @@ There are two ways we can handle this issue
 
 <img width="1440" alt="image" src="https://github.com/user-attachments/assets/a1700755-5cc1-4a60-8117-5647951ff67d">
 
+---
 
+### Create a Security Group and attach it to an EC2 instance
