@@ -1,21 +1,18 @@
 resource "aws_iam_user" "test" {
-  name = "iamadmin-tf"
-
-  tags = {
-    name = "tf-created"
-  }
+  name = var.aws_iam_username
+  tags = var.aws_iam_username_tags
 }
 
 resource "aws_iam_user_login_profile" "test_user_login_profile" {
   user                    = aws_iam_user.test.name
-  password_length         = 10
+  password_length         = var.aws_iam_user_login_profile_password_len
   password_reset_required = false
   # pgp_key = "keybase:your_key" can be used if the password requires encoding 
 }
 
 
 data "aws_iam_policy" "iamadmin_policy" {
-  arn = "arn:aws:iam::aws:policy/AdministratorAccess"
+  arn = var.aws_iam_policy_arn
 }
 
 resource "aws_iam_user_policy_attachment" "test_attachment" {
@@ -27,8 +24,3 @@ resource "aws_iam_user_policy_attachment" "test_attachment" {
 #   account_alias = "non-linear-trap"
 # }
 
-
-output "iamadmin_userlogindata" {
-  value     = aws_iam_user_login_profile.test_user_login_profile.password
-  sensitive = true
-}
